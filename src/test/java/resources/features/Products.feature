@@ -7,4 +7,4 @@ Scenario Outline: Validate promo code alert is visible when clicking on the spec
 	
 	Examples:
 	|				url														|				button				|
-	| http://www.webdriveruniversity.com/Page-Object-Model/products.html	| 		container-special-offers	|
+	| http://www.webdriveruniversity.com/Page-Object-Model/products.html	| 		#container-special-offers	|
