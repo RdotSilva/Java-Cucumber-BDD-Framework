@@ -1,13 +1,31 @@
 package stepDefinitions;
 
+import java.io.IOException;
+import java.nio.file.Paths;
+import java.util.concurrent.TimeUnit;
+
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.chrome.ChromeDriver;
+
 import cucumber.api.DataTable;
 import cucumber.api.PendingException;
+import cucumber.api.java.Before;
 import cucumber.api.java.en.And;
 import cucumber.api.java.en.Given;
 import cucumber.api.java.en.Then;
 import cucumber.api.java.en.When;
 
 public class ContactUsSteps {
+	WebDriver driver;
+	
+	@Before()
+	public void setup() throws IOException {
+		System.setProperty("webdriver.chrome.driver", Paths.get(System.getProperty("user.dir")).toRealPath() + "\\src\\test\\java\\resources\\other\\chromedriver.exe");
+		this.driver = new ChromeDriver();
+		this.driver.manage().window().maximize();
+		this.driver.manage().timeouts().pageLoadTimeout(120, TimeUnit.SECONDS);
+	}
+	
 	@Given("^I access webdriveruniversity contact us form$")
 	public void i_access_webdriveruniversity_contact_us_form() throws Throwable {
 	    // Write code here that turns the phrase above into concrete actions
