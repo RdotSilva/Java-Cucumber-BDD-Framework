@@ -9,6 +9,7 @@ import org.openqa.selenium.chrome.ChromeDriver;
 
 import cucumber.api.DataTable;
 import cucumber.api.PendingException;
+import cucumber.api.java.After;
 import cucumber.api.java.Before;
 import cucumber.api.java.en.And;
 import cucumber.api.java.en.Given;
@@ -24,6 +25,12 @@ public class ContactUsSteps {
 		this.driver = new ChromeDriver();
 		this.driver.manage().window().maximize();
 		this.driver.manage().timeouts().pageLoadTimeout(120, TimeUnit.SECONDS);
+	}
+	
+	@After()
+	public void tearDown() {
+		this.driver.manage().deleteAllCookies();
+		this.driver.quit();
 	}
 	
 	@Given("^I access webdriveruniversity contact us form$")

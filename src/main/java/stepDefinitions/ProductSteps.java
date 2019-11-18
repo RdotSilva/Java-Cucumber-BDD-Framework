@@ -23,6 +23,12 @@ public class ProductSteps {
 		this.driver.manage().window().maximize();
 		this.driver.manage().timeouts().pageLoadTimeout(120, TimeUnit.SECONDS);
 	}
+	
+	@After()
+	public void tearDown() {
+		this.driver.manage().deleteAllCookies();
+		this.driver.quit();
+	}
 
 	@Given("^user navigates to \"([^\"]*)\" website$")
 	public void user_navigates_to_website(String arg1) throws Throwable {
