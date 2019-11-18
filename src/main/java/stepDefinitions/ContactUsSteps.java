@@ -2,6 +2,7 @@ package stepDefinitions;
 
 import cucumber.api.DataTable;
 import cucumber.api.PendingException;
+import cucumber.api.java.en.And;
 import cucumber.api.java.en.Given;
 import cucumber.api.java.en.Then;
 import cucumber.api.java.en.When;
@@ -28,13 +29,13 @@ public class ContactUsSteps {
 	    throw new PendingException();
 	}
 
-	@When("^I enter a valid email address$")
+	@And("^I enter a valid email address$")
 	public void i_enter_a_valid_email_address() throws Throwable {
 	    // Write code here that turns the phrase above into concrete actions
 	    throw new PendingException();
 	}
 
-	@When("^I enter comments$")
+	@And("^I enter comments$")
 	public void i_enter_comments(DataTable arg1) throws Throwable {
 	    // Write code here that turns the phrase above into concrete actions
 	    // For automatic transformation, change DataTable to one of
