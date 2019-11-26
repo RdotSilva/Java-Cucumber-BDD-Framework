@@ -15,12 +15,13 @@ public class ProductSteps extends DriverFactory {
 
 	@When("^user clicks on \"([^\"]*)\"$")
 	public void user_clicks_on(String locator) throws Exception {
+		basePage.WaitUntilWebElementIsVisibleUsingByLocator(By.cssSelector(locator));
 		getDriver().findElement(By.cssSelector(locator)).click();
 	}
 
 	@Then("^user should be presented with a promo alert$")
 	public void user_should_be_presented_with_a_promo_alert() throws Exception {
-		Thread.sleep(3000);
-		getDriver().findElement(By.xpath("//button[text()='Proceed']")).click();
+		productsPage.printSpecialOffersVoucherCode();
+		productsPage.clickOnProceedButton_Popup();
 	}
 }
