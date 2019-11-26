@@ -31,7 +31,7 @@ public class ContactUs_Page extends BasePage{
 		return new ContactUs_Page();
 	}
 	
-	public ContactUs_Page enterLasttName(DataTable dataTable, int row, int column) throws Exception {
+	public ContactUs_Page enterLastName(DataTable dataTable, int row, int column) throws Exception {
 		List<List<String>> data = dataTable.raw();
 		sendKeysToWebElement(textfield_LastName, data.get(row).get(column));
 		return new ContactUs_Page();
@@ -48,7 +48,7 @@ public class ContactUs_Page extends BasePage{
 		return new ContactUs_Page();
 	}
 	
-	public ContactUs_Page clickOnSubmiButton() throws Exception {
+	public ContactUs_Page clickOnSubmitButton() throws Exception {
 		waitAndClickElement(button_Submit);
 		return new ContactUs_Page();
 	}
