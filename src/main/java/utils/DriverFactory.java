@@ -10,6 +10,7 @@ import org.openqa.selenium.ie.InternetExplorerDriver;
 import org.openqa.selenium.remote.DesiredCapabilities;
 import org.openqa.selenium.support.PageFactory;
 
+import pageObjects.BasePage;
 import pageObjects.ContactUs_Page;
 import pageObjects.Products_Page;
 
@@ -17,6 +18,7 @@ public class DriverFactory {
 	public static WebDriver driver;
 	public static ContactUs_Page contactUsPage;
 	public static Products_Page productsPage;
+	public static BasePage basePage;
 
 	public WebDriver getDriver() throws Exception {
 		try {
@@ -63,6 +65,7 @@ public class DriverFactory {
 			// Initialize pages
 			contactUsPage = PageFactory.initElements(driver, ContactUs_Page.class);
 			productsPage = PageFactory.initElements(driver, Products_Page.class);
+			basePage = PageFactory.initElements(driver, BasePage.class);
 		}
 		return driver;
 	}
