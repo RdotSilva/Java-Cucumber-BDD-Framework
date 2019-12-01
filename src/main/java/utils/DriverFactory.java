@@ -1,5 +1,7 @@
 package utils;
 
+import java.io.FileInputStream;
+import java.util.Properties;
 import java.util.concurrent.TimeUnit;
 
 import org.openqa.selenium.WebDriver;
@@ -23,8 +25,10 @@ public class DriverFactory {
 	public WebDriver getDriver() throws Exception {
 		try {
 			// Read Config
-			ReadConfigFile file = new ReadConfigFile();
-			String browserName = file.getBrowser();
+			Properties p = new Properties();
+			FileInputStream fi = new FileInputStream(System.getProperty("user.dir") + "\\src\\main\\java\\properties\\config.properties");
+			p.load(fi);
+			String browserName = p.getProperty("browser");
 
 			switch (browserName) {
 			case "firefox":
