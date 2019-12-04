@@ -369,7 +369,7 @@ public class BasePage extends DriverFactory {
 		return date;
 	}
 	
-	public static void captureScreenshot() {
+	public static void captureScreenshot() throws IOException {
 		File srcFile = ((TakesScreenshot)driver).getScreenshotAs(OutputType.FILE);
 		
 		screenshotName = returnDateStamp(".jpg");
@@ -379,5 +379,9 @@ public class BasePage extends DriverFactory {
 		Reporter.addStepLog("Taking a screenshot!");
 		Reporter.addStepLog("<br>");
 		Reporter.addStepLog("<a target=\"_blank\", href="+ returnScreenshotName() + "><imag src=" + returnScreenshotName()+ " height=200 width=300></img></a>");
+	}
+	
+	public static String returnScreenshotName() {
+		return (System.getProperty("user.dir") + "\\output\\imgs\\" + screenshotName).toString();
 	}
 }
