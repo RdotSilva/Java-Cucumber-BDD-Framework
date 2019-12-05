@@ -365,7 +365,7 @@ public class BasePage extends DriverFactory {
 	 **********************************************************************************/
 	public static String returnDateStamp(String fileExtension) {
 		Date d = new Date();
-		String date = d.toString().replace(":", "_").replace("", "_") + fileExtension;
+		String date = d.toString().replace(":", "_").replace(" ", "_") + fileExtension;
 		return date;
 	}
 	
@@ -378,10 +378,10 @@ public class BasePage extends DriverFactory {
 		
 		Reporter.addStepLog("Taking a screenshot!");
 		Reporter.addStepLog("<br>");
-		Reporter.addStepLog("<a target=\"_blank\", href="+ returnScreenshotName() + "><imag src=" + returnScreenshotName()+ " height=200 width=300></img></a>");
+		Reporter.addStepLog("<a target=\"_blank\", href=" + returnScreenshotName()+"><img src="+ returnScreenshotName() + " height=200 width=300></img></a>");
 	}
 	
 	public static String returnScreenshotName() {
-		return (System.getProperty("user.dir") + "\\output\\imgs\\" + screenshotName).toString();
+		return ("imgs\\" + screenshotName);
 	}
 }
