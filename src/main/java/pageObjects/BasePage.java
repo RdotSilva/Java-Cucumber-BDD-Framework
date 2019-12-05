@@ -2,6 +2,9 @@ package pageObjects;
 
 import java.awt.AWTException;
 import java.io.File;
+import java.io.FileInputStream;
+import java.io.FileNotFoundException;
+import java.io.FileOutputStream;
 import java.io.IOException;
 import java.util.Date;
 import java.util.List;
@@ -387,10 +390,23 @@ public class BasePage extends DriverFactory {
 		return ("imgs\\" + screenshotName);
 	}
 	
-	private static void copyFileUsingStream(File source, File dest) {
-		InputStream is = null;
-		OutputStream os = null;
+	private static void copyFileUsingStream(File source, File dest) throws IOException {
+		FileInputStream is = null;
+		FileOutputStream os = null;
 		
-		
+		try {
+			is = new FileInputStream(source);
+			os = new FileOutputStream(dest);
+			byte[] buffer = new byte[1024];
+			int length;
+			
+			while ((length = is.read(buffer)) > 0) {
+				os.write(buffer, 0, length);
+			}
+			
+		} finally {
+			is.close();
+			os.close();
+		}
 	}
 }
