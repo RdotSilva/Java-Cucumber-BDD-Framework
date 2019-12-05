@@ -409,4 +409,13 @@ public class BasePage extends DriverFactory {
 			os.close();
 		}
 	}
+	
+	public static void copyLatestExtentReport() throws IOException {
+		Date d = new Date();
+		String date = d.toString().replace(":", "_").replace(" ", "_");
+		File source = new File(System.getProperty("user.dir") + "\\output\\report.html");
+		File dest = new File(System.getProperty("user.dir") + "\\output\\" + date.toString() + ".html");
+		copyFileUsingStream(source, dest);
+		
+	}
 }
