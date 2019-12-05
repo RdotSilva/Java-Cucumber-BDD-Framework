@@ -8,6 +8,8 @@ import java.util.List;
 
 import org.codehaus.plexus.util.FileUtils;
 import org.junit.Assert;
+import org.omg.CORBA.portable.InputStream;
+import org.omg.CORBA.portable.OutputStream;
 import org.openqa.selenium.Alert;
 import org.openqa.selenium.By;
 import org.openqa.selenium.JavascriptExecutor;
@@ -378,10 +380,17 @@ public class BasePage extends DriverFactory {
 		
 		Reporter.addStepLog("Taking a screenshot!");
 		Reporter.addStepLog("<br>");
-		Reporter.addStepLog("<a target=\"_blank\", href=" + returnScreenshotName()+"><img src="+ returnScreenshotName() + " height=200 width=300></img></a>");
+		Reporter.addStepLog("<a target=\"_blank\", href=" + returnScreenshotName() +"><img src=" + returnScreenshotName() + " height=200 width=300></img></a>");
 	}
 	
 	public static String returnScreenshotName() {
 		return ("imgs\\" + screenshotName);
+	}
+	
+	private static void copyFileUsingStream(File source, File dest) {
+		InputStream is = null;
+		OutputStream os = null;
+		
+		
 	}
 }
