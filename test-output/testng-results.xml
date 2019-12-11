@@ -2,10 +2,10 @@
 <testng-results skipped="0" failed="0" total="0" passed="0">
   <reporter-output>
   </reporter-output>
-  <suite name="Cucumber Framework" duration-ms="15182" started-at="2019-11-18T17:12:52Z" finished-at="2019-11-18T17:13:08Z">
+  <suite name="Cucumber Framework" duration-ms="17441" started-at="2019-12-11T20:04:34Z" finished-at="2019-12-11T20:04:51Z">
     <groups>
     </groups>
-    <test name="Cucumber Tests" duration-ms="15182" started-at="2019-11-18T17:12:52Z" finished-at="2019-11-18T17:13:08Z">
+    <test name="Cucumber Tests" duration-ms="17441" started-at="2019-12-11T20:04:34Z" finished-at="2019-12-11T20:04:51Z">
     </test> <!-- Cucumber Tests -->
   </suite> <!-- Cucumber Framework -->
 </testng-results>
