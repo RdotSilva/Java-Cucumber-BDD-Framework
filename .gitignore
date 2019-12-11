@@ -104,3 +104,8 @@ buildNumber.properties
 .mvn/timing.properties
 .mvn/wrapper/maven-wrapper.jar
 .flattened-pom.xml
+
+## TEMP IGNORE OUTPUT DIRECTORIES ##
+output/
+
+test-output/
