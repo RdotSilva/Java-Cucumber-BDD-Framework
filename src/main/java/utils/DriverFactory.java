@@ -13,6 +13,7 @@ import org.openqa.selenium.remote.DesiredCapabilities;
 import org.openqa.selenium.support.PageFactory;
 
 import pageObjects.BasePage;
+import pageObjects.BmiCalculatorPage;
 import pageObjects.ContactUs_Page;
 import pageObjects.Products_Page;
 
@@ -21,6 +22,7 @@ public class DriverFactory {
 	public static ContactUs_Page contactUsPage;
 	public static Products_Page productsPage;
 	public static BasePage basePage;
+	public static BmiCalculatorPage bmiCalculatorPage;
 
 	public WebDriver getDriver() throws Exception {
 		try {
@@ -70,6 +72,7 @@ public class DriverFactory {
 			contactUsPage = PageFactory.initElements(driver, ContactUs_Page.class);
 			productsPage = PageFactory.initElements(driver, Products_Page.class);
 			basePage = PageFactory.initElements(driver, BasePage.class);
+			bmiCalculatorPage = PageFactory.initElements(driver, BmiCalculatorPage.class);
 		}
 		return driver;
 	}
