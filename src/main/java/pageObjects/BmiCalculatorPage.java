@@ -27,17 +27,30 @@ public class BmiCalculatorPage extends BasePage{
 	public BmiCalculatorPage enterWeight(int weight) throws Exception {
 		int numberOfPresses = weight - 145;
 		
-		for (int i = 0; i < numberOfPresses ; i++)
-		{
+		for (int i = 0; i < numberOfPresses ; i++) {
 			weightSlider.sendKeys(Keys.ARROW_RIGHT);
 		}
+		
 		return new BmiCalculatorPage();
 	}
 	
 	public BmiCalculatorPage enterHeightFeet(int feet) throws Exception {
+		int offSetValuePerFoot = 40;
+		int offSetValue = 0;
+		
+		if (feet < 5) {
+			offSetValue = offSetValuePerFoot * (5 - feet);
+			offSetValue = -offSetValue;
+		}
+		
+		if (feet > 5) {
+			offSetValue = offSetValuePerFoot * (feet - 5);
+		}
+		
 		Actions move = new Actions(driver);
 		Action action = (Action) move.dragAndDropBy(feetSlider, offSetValue, 0).build();
 		action.perform();
+		
 		return new BmiCalculatorPage();
 	}
 	
@@ -47,6 +60,7 @@ public class BmiCalculatorPage extends BasePage{
 		Actions move = new Actions(driver);
 		Action action = (Action) move.dragAndDropBy(inchesSlider, offSetValuePerInch * 2, 0).build();
 		action.perform();
+		
 		return new BmiCalculatorPage();
 	}
 	
@@ -57,6 +71,7 @@ public class BmiCalculatorPage extends BasePage{
 		WaitUntilWebElementIsVisible(displayedBMI);
 		
 		Assert.assertEquals(expectedDisplayedBMI, displayedBMI.getAttribute("value"));
+		
 		return new BmiCalculatorPage();
 	}
 
