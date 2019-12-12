@@ -1,6 +1,7 @@
 package pageObjects;
 
 import java.io.IOException;
+import java.util.List;
 
 import org.junit.Assert;
 import org.openqa.selenium.By;
@@ -9,6 +10,8 @@ import org.openqa.selenium.WebElement;
 import org.openqa.selenium.interactions.Action;
 import org.openqa.selenium.interactions.Actions;
 import org.openqa.selenium.support.FindBy;
+
+import cucumber.api.DataTable;
 
 public class BmiCalculatorPage extends BasePage{
 	public @FindBy(xpath = "//div[@id='slider_weight']//a") WebElement weightSlider;
@@ -54,11 +57,24 @@ public class BmiCalculatorPage extends BasePage{
 		return new BmiCalculatorPage();
 	}
 	
-	public BmiCalculatorPage enterHeightInches() throws Exception {
+	public BmiCalculatorPage enterHeightInches(DataTable inchDataTable, int row, int column) throws Exception {
+		List<List<String>> inchData = inchDataTable.raw();
 		int offSetValuePerInch = 20;
+		int offSetValue = 0;
+		
+		int inches = Integer.parseInt(inchData.get(row).get(column));
+		
+		if (inches < 7 ) {
+			offSetValue = offSetValuePerInch * (7 - inches);
+			offSetValue = -offSetValue;
+		}
+		
+		if (inches > 7) {
+			offSetValue = offSetValuePerInch * (inches - 7);
+		}
 		
 		Actions move = new Actions(driver);
-		Action action = (Action) move.dragAndDropBy(inchesSlider, offSetValuePerInch * 2, 0).build();
+		Action action = (Action) move.dragAndDropBy(inchesSlider, offSetValue, 0).build();
 		action.perform();
 		
 		return new BmiCalculatorPage();
