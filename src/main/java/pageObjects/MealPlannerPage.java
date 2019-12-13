@@ -42,9 +42,9 @@ public class MealPlannerPage extends BasePage {
 	}
 	
 	public MealPlannerPage confirmUserCanAccessMealPlanner() throws Exception {
-		WebElement mealPlannerPage = getDriver().findElement(By.xpath(mealPlannerConfirmText));
-		WaitUntilWebElementIsVisible(mealPlannerPage);
-		Assert.assertEquals("Meal Planner", mealPlannerPage.getText());
+		WebElement mealPlannerConfirmText = getDriver().findElement(By.xpath("//div[@class='carousel_header_text']"));
+		WaitUntilWebElementIsVisible(mealPlannerConfirmText);
+		Assert.assertEquals("Meal Planner", mealPlannerConfirmText.getText());
 		return new MealPlannerPage();
 	}
 		
