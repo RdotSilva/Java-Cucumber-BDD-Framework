@@ -35,5 +35,10 @@ public class MealPlannerPage extends BasePage {
 		sendKeysToWebElement(usernameInput, username);
 		return new MealPlannerPage();
 	}
+	
+	public MealPlannerPage enterPassword(String password) throws Exception {
+		sendKeysToWebElement(passwordInput, password);
+		return new MealPlannerPage();
+	}
 		
 }
