@@ -14,6 +14,7 @@ import org.openqa.selenium.support.PageFactory;
 
 import pageObjects.BasePage;
 import pageObjects.BmiCalculatorPage;
+import pageObjects.MealPlannerPage;
 import pageObjects.ContactUs_Page;
 import pageObjects.Products_Page;
 
@@ -23,6 +24,7 @@ public class DriverFactory {
 	public static Products_Page productsPage;
 	public static BasePage basePage;
 	public static BmiCalculatorPage bmiCalculatorPage;
+	public static MealPlannerPage mealPlannerPage;
 
 	public WebDriver getDriver() throws Exception {
 		try {
@@ -73,6 +75,7 @@ public class DriverFactory {
 			productsPage = PageFactory.initElements(driver, Products_Page.class);
 			basePage = PageFactory.initElements(driver, BasePage.class);
 			bmiCalculatorPage = PageFactory.initElements(driver, BmiCalculatorPage.class);
+			mealPlannerPage = PageFactory.initElements(driver, MealPlannerPage.class);
 		}
 		return driver;
 	}
