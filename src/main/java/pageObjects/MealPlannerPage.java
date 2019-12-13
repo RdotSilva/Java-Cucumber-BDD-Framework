@@ -20,5 +20,10 @@ public class MealPlannerPage extends BasePage {
 	public MealPlannerPage() throws IOException {
 		super();
 	}
+	
+	public MealPlannerPage getMealPlannerPage() throws Exception {
+		getDriver().get("https://www.eatthismuch.com/");
+		return new MealPlannerPage();
+	}
 		
 }
