@@ -25,5 +25,10 @@ public class MealPlannerPage extends BasePage {
 		getDriver().get("https://www.eatthismuch.com/");
 		return new MealPlannerPage();
 	}
+	
+	public MealPlannerPage clickLoginLink() throws Exception {
+		waitAndClickElement(loginLink);
+		return new MealPlannerPage();
+	}
 		
 }
