@@ -30,5 +30,10 @@ public class MealPlannerPage extends BasePage {
 		waitAndClickElement(loginLink);
 		return new MealPlannerPage();
 	}
+	
+	public MealPlannerPage enterUsername(String username) throws Exception {
+		sendKeysToWebElement(usernameInput, username);
+		return new MealPlannerPage();
+	}
 		
 }
