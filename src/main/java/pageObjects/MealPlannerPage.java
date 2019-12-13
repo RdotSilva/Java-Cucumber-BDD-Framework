@@ -40,5 +40,12 @@ public class MealPlannerPage extends BasePage {
 		sendKeysToWebElement(passwordInput, password);
 		return new MealPlannerPage();
 	}
+	
+	public MealPlannerPage confirmUserCanAccessMealPlanner() throws Exception {
+		WebElement mealPlannerPage = getDriver().findElement(By.xpath(mealPlannerConfirmText));
+		WaitUntilWebElementIsVisible(mealPlannerPage);
+		Assert.assertEquals("Meal Planner", mealPlannerPage.getText());
+		return new MealPlannerPage();
+	}
 		
 }
