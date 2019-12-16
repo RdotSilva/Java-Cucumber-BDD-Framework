@@ -38,21 +38,18 @@ public class MealPlannerSteps extends DriverFactory{
 	}
 
 	@Given("^user is not logged in as a registered user$")
-	public void user_is_not_logged_in_as_a_registered_user() throws Throwable {
-	    // Write code here that turns the phrase above into concrete actions
-	    throw new PendingException();
+	public void user_is_not_logged_in_as_a_registered_user() throws Exception {
+	   
 	}
 	
 	@When("^user navigates to the eatthismuch website$")
 	public void user_navigates_to_the_eatthismuch_website() throws Exception {
 	    mealPlannerPage.getMealPlannerPage();
 	}
-	
 
 	@Then("^user should be presented with the landing page$")
-	public void user_should_be_presented_with_the_landing_page() throws Throwable {
-	    // Write code here that turns the phrase above into concrete actions
-	    throw new PendingException();
+	public void user_should_be_presented_with_the_landing_page() throws Exception {
+	    mealPlannerPage.confirmUserOnLandingPage();
 	}
 
 }
