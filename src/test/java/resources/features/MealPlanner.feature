@@ -10,5 +10,5 @@ Scenario: User can access meal plan page
 	
 Scenario: User can not access meal plan page
 	Given user is not logged in as a registered user
-	When user navigates to the eatthismuch.com website
+	When user navigates to the eatthismuch website
 	Then user should be presented with the landing page
