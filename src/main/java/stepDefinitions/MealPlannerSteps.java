@@ -42,6 +42,12 @@ public class MealPlannerSteps extends DriverFactory{
 	    // Write code here that turns the phrase above into concrete actions
 	    throw new PendingException();
 	}
+	
+	@When("^user navigates to the eatthismuch website$")
+	public void user_navigates_to_the_eatthismuch_website() throws Exception {
+	    mealPlannerPage.getMealPlannerPage();
+	}
+	
 
 	@Then("^user should be presented with the landing page$")
 	public void user_should_be_presented_with_the_landing_page() throws Throwable {
