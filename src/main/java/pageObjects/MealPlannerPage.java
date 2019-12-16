@@ -47,5 +47,12 @@ public class MealPlannerPage extends BasePage {
 		Assert.assertEquals("Meal Planner", mealPlannerConfirmText.getText());
 		return new MealPlannerPage();
 	}
+	
+	public MealPlannerPage confirmUserOnLandingPage() throws Exception {
+		WebElement landingPageConfirmText = getDriver().findElement(By.xpath("//h1[contains(text(),'Put your diet on autopilot')]"));
+		WaitUntilWebElementIsVisible(landingPageConfirmText);
+		Assert.assertEquals("Put yout diet on autopilot", landingPageConfirmText.getText());
+		return new MealPlannerPage();
+	}
 		
 }
