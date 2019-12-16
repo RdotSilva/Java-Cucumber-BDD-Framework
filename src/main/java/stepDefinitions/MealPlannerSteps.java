@@ -30,6 +30,7 @@ public class MealPlannerSteps extends DriverFactory{
 	@When("^user enters a valid password$")
 	public void user_enters_a_valid_password() throws Exception {
 	    mealPlannerPage.enterPassword("4FB&2c$");
+	    mealPlannerPage.clickOnSubmitButton();
 	}
 
 	@Then("^user should be presented with the Meal Planner page$")
