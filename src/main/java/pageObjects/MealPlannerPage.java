@@ -61,5 +61,29 @@ public class MealPlannerPage extends BasePage {
 		Assert.assertEquals("Put your diet on autopilot", landingPageConfirmText.getText());
 		return new MealPlannerPage();
 	}
+	
+	public MealPlannerPage checkForSelectedAllergies() throws Exception {
+		// Click Settings Button
+		// Check for the list-item-on class. This means an allergy is clicked on.
+		// <a class="nav-list-item list-item-on" name="allergies2" data-value="peanut" id="c11653_allergies2-0" xpath="1">Peanut</a>
+		////a[@id='c11653_allergies2-0'] data value = "tree nuts" "peanut"
+		return new MealPlannerPage();
+	}
+	
+	public MealPlannerPage clickOnGenerateMealButton() throws Exception {
+		// Click generate meal button
+		// //div[@id='2019-12-19']//div[contains(@class,'single_day_view_container')]//div[contains(@class,'container')]//div[contains(@class,'row')]//div[contains(@class,'day_header col-12 col-lg-7 col-xl-6')]//div//div[contains(@class,'day_refresh_button svg-button inline-block')]//*[contains(@class,'etm-icon etm-icon-sm')]
+		// <use xlink:href="#icon-refresh3"></use>
+		return new MealPlannerPage();
+	}
+	
+	public MealPlannerPage checkMealsForAllergies() throws Exception {
+		// Locate meal planner box
+		// Scan each child for allergies
+		// Assert that item doesn't contain allergies for each child
+		
+		// //div[contains(@class,'meal_list meal_list_border col-12')]//div//div[1]//div[3]//div[1]//ul[1]
+		return new MealPlannerPage();
+	}
 		
 }
